@@ -1,0 +1,15 @@
+apiVersion: web.azure.upbound.io/v1beta1
+kind: AppServicePlan
+metadata:
+  labels:
+    demo.tm.io/landingzone: tm-demo-1
+  name: tm-appserviceplan-demo
+spec:
+  forProvider:
+    location: West US 3
+    resourceGroupNameSelector:
+      matchLabels:
+        demo.tm.io/landingzone: tm-demo-1
+    sku:
+      - size: S1
+        tier: Standard
