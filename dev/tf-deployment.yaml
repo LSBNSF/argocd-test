@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: tf-rg
-        image: argocdtf.azurecr.io/tfcode:1.0.1
+        image: argocdtf.azurecr.io/tfcode:1.0.3
         ports:
         - containerPort: 8080
 
