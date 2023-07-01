@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: tfcode
 spec:
-  schedule: "0 0 * * *"
+  schedule: "@Once"
   jobTemplate:
     spec:
       template:
