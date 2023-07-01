@@ -1,28 +1,15 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1beta1
+kind: CronJob
 metadata:
-  name: tf-rg
-  namespace: myapp 
+  name: tfcode
 spec:
-  selector:
-    matchLabels:
-      app: tf-rg
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: tf-rg
+  schedule: "0 0 * * *"
+  jobTemplate:
     spec:
-      containers:
-      - name: tf-rg
-        image: argocdtf.azurecr.io/tfcode:1.0.3
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: tf-rg
-  namespace: myapp 
-spec:
-  selector:
-    app: tf-rg
+      template:
+        spec:
+          containers:
+          - name: tfcode
+            image: argocdtf.azurecr.io/tfcode:1.0.3
+          restartPolicy: Never
+          
