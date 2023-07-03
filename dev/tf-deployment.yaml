@@ -1,4 +1,3 @@
-apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: tf-rg
@@ -15,13 +14,9 @@ spec:
     spec:
       containers:
       - name: tf-rg
-        image: argocdtf.azurecr.io/sampleapp:ce1c9413d8592f057edff11a8cbeb9c3af6ba761
+        image: argocdtf.azurecr.io/tfcode:1.0.3
         ports:
         - containerPort: 8080
-        lifecycle:
-          preStop:
-            exec:
-              command: ["/bin/sh", "-c", "terraform destroy -auto-approve"]
 
 ---
 apiVersion: v1
