@@ -1,34 +1,10 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: tf-rg
-  namespace: myapp 
-spec:
-  selector:
-    matchLabels:
-      app: tf-rg
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: tf-rg
-    spec:
-      containers:
-      - name: tf-rg
-        image: argocdtf.azurecr.io/tfcode:1.0.3
-        ports:
-        - containerPort: 8080
-
----
 apiVersion: v1
-kind: Service
+kind: Pod
 metadata:
-  name: tf-rg
-  namespace: myapp 
+  name: tf-code
 spec:
-  selector:
-    app: tf-rg
-  ports:
-  - port: 8080
-    protocol: TCP
-    targetPort: 8080
+  restartPolicy: Never
+  containers:
+  - name: tf-code
+    image: argocdtf.azurecr.io/tfcode:1.0.3
+    # Add other container configuration as needed
