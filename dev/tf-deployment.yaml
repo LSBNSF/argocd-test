@@ -6,5 +6,5 @@ spec:
   restartPolicy: Never
   containers:
   - name: tf-code
-    image: argocdtf.azurecr.io/tfcode:1.0.3
+    image: argocdtf.azurecr.io/tfcode:1.0.4
     # Add other container configuration as needed
