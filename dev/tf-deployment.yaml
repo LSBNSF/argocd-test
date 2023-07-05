@@ -6,6 +6,6 @@ spec:
   restartPolicy: OnFailure
   containers:
   - name: tf-code
-    image: argocdtf.azurecr.io/tfcode:1.0.8
+    image: argocdtf.azurecr.io/tfcode:1.0.9
     command: ["/bin/sh"]
     args: ["-c", "terraform apply -auto-approve; sleep infinity"]
