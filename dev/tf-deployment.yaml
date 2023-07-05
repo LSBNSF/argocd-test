@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tf-code
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: tf-code
+    image: argocdtf.azurecr.io/tfcode:1.0.6
+    command: [ "sleep" ]
+    args: [ "infinity" ]
