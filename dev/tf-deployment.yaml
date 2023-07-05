@@ -16,8 +16,6 @@ spec:
       containers:
       - name: tf-code
         image: argocdtf.azurecr.io/tfcode:1.0.8
-        ports:
-        - containerPort: 8080
 
 ---
 apiVersion: v1
