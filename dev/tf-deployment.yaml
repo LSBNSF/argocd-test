@@ -26,3 +26,7 @@ metadata:
 spec:
   selector:
     app: tf-code
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
