@@ -25,4 +25,4 @@ metadata:
   namespace: myapp 
 spec:
   selector:
-    app: tf-rg
+    app: tf-code
