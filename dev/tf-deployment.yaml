@@ -6,4 +6,4 @@ spec:
   restartPolicy: OnFailure
   containers:
   - name: tf-code
-    image: argocdtf.azurecr.io/tfcode:1.0.5
+    image: argocdtf.azurecr.io/tfcode:1.0.6
