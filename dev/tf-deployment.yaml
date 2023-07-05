@@ -4,6 +4,7 @@ metadata:
   name: tf-code
 spec:
   restartPolicy: OnFailure
+  imagePullPolicy: Always
   containers:
   - name: tf-code
     image: argocdtf.azurecr.io/tfcode:1.0.6
